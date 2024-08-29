@@ -2,7 +2,8 @@
 // Enforce strict type declarations
 declare(strict_types=1);
 
-//THE CLASS
+// THE CLASS
+
 
 class Beverage 
 {
@@ -12,13 +13,13 @@ class Beverage
         // Private: Accessible only within the class itself.
 
     // Declare a public property with the strict type string to store the color of the beverage
-    public string $color;
+    private string $color;
     
     // Declare a public property with the strict type flaot to store the price of the beverage
-    public float $price;
+    private float $price;
     
     // Declare a public property with the strict type string to store the temperature of the beverage
-    public string $temperature;
+    private string $temperature;
     
     // The Constructor
 
@@ -48,25 +49,18 @@ class Beverage
     }
 }
 
-// The Objects
 
-// Create an instance of the Beverage class with the color "black" and price 2.0
-$cola = new Beverage("black", 2.0);
-
-// The Output
-
-// Output the information about the beverage using the getInfo method
-echo $cola->getInfo() . "<br>";
 
 
 // EXTENDING THE BEVERAGE CLASS
+
 class Beer extends Beverage
 {
     // The Properties
 
     // Declare a public property with the strict type string to store the name of the beer
-    public string $name;
-    public float $alcohol;
+    private string $name;
+    private float $alcohol;
 
     // The Constructor
     //TODO: Foresee a construct that's allows us to use all the properties from beverage and that sets the values for name and alcoholpercentage.
