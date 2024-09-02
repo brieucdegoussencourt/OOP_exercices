@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 $date = new DateTime('', new DateTimeZone('Europe/Brussels'));
 echo $date->format('Y-m-d H:i:s') . "<br>";
 echo $date->format('l, d-M-Y H:i:s T') . "<br>"; 
@@ -17,14 +19,25 @@ var_dump(json_decode($s));
 
 // Create a new class & object
 
-declare(strict_types=1);
+
 
 class Pont
 {
-   public float $longueur = 0;
+   public float $longueur;
+   public float $largeur;
+  
+   public function getSurface(): float
+   {
+       return $this->longueur * $this->largeur;
+   }
 }
 
-$pont = new Pont;
-$pont->longueur = 263.0;
+// …
 
-var_dump($pont);
+$pont = new Pont;
+$pont->longueur = 286.0;
+$pont->largeur = 15.0;
+
+$surface = $pont->getSurface();
+
+echo "La surface du pont est de $surface m².";
