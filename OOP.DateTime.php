@@ -41,3 +41,14 @@ $pont->largeur = 15.0;
 $surface = $pont->getSurface();
 
 echo "La surface du pont est de $surface m².";
+
+class Pont
+{
+   private string $unite = 'm²';
+  
+   private float $longueur;
+   private float $largeur;
+}
+
+$towerBridge = new Pont;
+$towerBridge->longueur = 286.0;
